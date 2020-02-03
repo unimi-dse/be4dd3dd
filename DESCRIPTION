@@ -1,12 +1,10 @@
-Package: MyPackage
+Package: ShinyApp
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Miles per Gallon of a vehicle
 Version: 0.1.0
-Author: Anna Errichiello <anna.errichiello@studenti.unimi.it>
+Author: Anna Errichiello <anna.errichiello@studenti.unimi.it
 Maintainer: Anna Errichiello <anna.errichiello@studenti.unimi.it>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: GPL-2
+Description: This application uses the mtcars data from the R datasets package, and allows users to see a box-plot that explores the relationship between miles-per-gallon (MPG) and three other variables (Cylinders, Transmission, and Gears).
+License: What license is it under?
 Encoding: UTF-8
-LazyData: true
 RoxygenNote: 7.0.2
