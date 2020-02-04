@@ -1,108 +1,53 @@
 library(shiny)
-# Define UI for miles per gallon app ----
+
 ui <- pageWithSidebar(
 
   # App title ----
-  headerPanel("Miles Per Gallon"),
-
-  # Sidebar panel for inputs ----
-  sidebarPanel(),
-
-  # Main panel for displaying outputs ----
-  mainPanel()
-)
-# Define server logic to plot various variables against mpg ----
-server <- function (input, output) {
-
-}
-# Define UI for miles per gallon app ----
-ui <- pageWithSidebar(
-
-  # App title ----
-  headerPanel("Miles Per Gallon"),
+  headerPanel("Distribution Calculator by Anna Errichiello"),
 
   # Sidebar panel for inputs ----
   sidebarPanel(
-
-    # Input: Selector for variable to plot against mpg ----
-    selectInput("variable", "Variable:",
-                c("Cylinders" = "cyl",
-                  "Transmission" = "am",
-                  "Gears" = "gear")),
-
-    # Input: Checkbox for whether outliers should be included ----
-    checkboxInput("outliers", "Show outliers", TRUE)
-
+    selectInput("Distribution","Please Select Distribution Type",
+                choices=c("Normal","Exponential")),
+    sliderInput("sampleSize","Please Select Sample Size:",
+                min=100, max=5000, value=1000, step=100),
+    conditionalPanel(condition = "input.Distribution == 'Normal",
+                     textInput("Mean","Please Select the mean", 10),
+                     textInput("sd","Please Select Standard Deviation")),
+    conditionalPanel(condition="input.Distribution == 'Exponential",
+                     textInput("lamda","Please Select Exponential Lamda:", 1))
   ),
 
   # Main panel for displaying outputs ----
-  mainPanel()
-)
-# Data pre-processing ----
-# Tweak the "am" variable to have nicer factor labels -- since this
-# doesn't rely on any user inputs, we can do this once at startup
-# and then use the value throughout the lifetime of the app
-mpgData <- mtcars
-mpgData$am <- factor(mpgData$am, labels = c("Automatic", "Manual"))
-
-# Define server logic to plot various variables against mpg ----
-server <- function(input, output) {
-
-  # Compute the formula text ----
-  # This is in a reactive expression since it is shared by the
-  # output$caption and output$mpgPlot functions
-  formulaText <- reactive({
-    paste("mpg ~", input$variable)
-  })
-
-  # Return the formula text for printing as a caption ----
-  output$caption <- renderText({
-    formulaText()
-  })
-
-  # Generate a plot of the requested variable against mpg ----
-  # and only exclude outliers if requested
-  output$mpgPlot <- renderPlot({
-    boxplot(as.formula(formulaText()),
-            data = mpgData,
-            outline = input$outliers,
-            col = "#75AADB", pch = 19)
-  })
-
-}
-# Define UI for miles per gallon app ----
-ui <- fluidPage(
-
-  # App title ----
-  titlePanel("Miles Per Gallon"),
-
-  # Sidebar layout with input and output definitions ----
-  sidebarLayout(
-
-    # Sidebar panel for inputs ----
-    sidebarPanel(
-
-      # Input: Selector for variable to plot against mpg ----
-      selectInput("variable", "Variable:",
-                  c("Cylinders" = "cyl",
-                    "Transmission" = "am",
-                    "Gears" = "gear")),
-
-      # Input: Checkbox for whether outliers should be included ----
-      checkboxInput("outliers", "Show outliers", TRUE)
-
-    ),
-
-    # Main panel for displaying outputs ----
-    mainPanel(
-
-      # Output: Formatted text for caption ----
-      h3(textOutput("caption")),
-
-      # Output: Plot of the requested variable against mpg ----
-      plotOutput("mpgPlot")
-
-    )
+  mainPanel(
+    plotOutput("My plot")
   )
 )
+
+
+server <- function (input, output, session) {
+
+  output$`My plot` <- renderPlot({
+
+    distType <- input$Distribution
+    size <- input$sampleSize
+
+    if(distType == "Normal"){
+
+      randomVec <- rnorm(size,mean = as.numeric(input$Mean), sd=as.numeric(input$sd))
+    }
+    else {
+
+      randomVec <- rexp(size,rate = 1/as.numeric(input$lamda))
+    }
+
+    hist(randomVec, col = "Pink")
+
+
+  })
+}
+
+
+
+shinyApp(ui=ui, server=server)
 
