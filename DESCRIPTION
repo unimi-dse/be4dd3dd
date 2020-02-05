@@ -1,6 +1,6 @@
-Package: ShinyApp
+Package: Distribution_Calculator
 Type: Package
-Title: Distribution Calculator
+Title: Distribution Calculator by Anna Errichiello
 Version: 0.1.0
 Author: Anna Errichiello <anna.errichiello@studenti.unimi.it
 Maintainer: Anna Errichiello <anna.errichiello@studenti.unimi.it>
