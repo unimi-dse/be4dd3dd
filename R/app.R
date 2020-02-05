@@ -8,7 +8,7 @@ ui <- pageWithSidebar(
   # Sidebar panel for inputs ----
   sidebarPanel(
     selectInput("Distribution","Please Select Distribution Type",
-                choices=c("Normal","Exponential")),
+                choices=c("Exponential","Normal")),
     sliderInput("sampleSize","Please Select Sample Size:",
                 min=100, max=5000, value=1000, step=100),
     conditionalPanel(condition = "input.Distribution == 'Normal",
@@ -20,14 +20,14 @@ ui <- pageWithSidebar(
 
   # Main panel for displaying outputs ----
   mainPanel(
-    plotOutput("My plot")
+    plotOutput("plot")
   )
 )
 
 
 server <- function (input, output, session) {
 
-  output$`My plot` <- renderPlot({
+  output$`plot` <- renderPlot({
 
     distType <- input$Distribution
     size <- input$sampleSize
