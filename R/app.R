@@ -1,7 +1,7 @@
 #'description
 #'
 #'@export
-appanna_app <- function() {
+anna_app <- function() {
 
   library(shiny)
   ui <- pageWithSidebar(
