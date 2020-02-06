@@ -10,3 +10,4 @@ Encoding: UTF-8
 LazyLoading: TRUE
 RoxygenNote: 7.0.2
 Imports:shiny
+Functions: anna_app
