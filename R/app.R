@@ -28,7 +28,6 @@ anna_app <- function() {
     )
   )
 
-  requireNamespace(shiny)
   server <- function (input, output, session) {
 
     output$`plot` <- shiny::renderPlot({
