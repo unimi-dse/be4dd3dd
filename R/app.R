@@ -3,7 +3,7 @@
 #'@export
 anna_app <- function() {
 
-  requireNamespace(shiny)
+
   ui <- shiny::pageWithSidebar(
 
     # App title ----
