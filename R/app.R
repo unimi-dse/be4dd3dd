@@ -38,14 +38,14 @@ anna_app <- function() {
 
       if(distType == "Normal"){
 
-        randomVec <- rnorm(size,mean = as.numeric(input$Mean), sd=as.numeric(input$sd))
+        randomVec <- stats::rnorm(size,mean = as.numeric(input$Mean), sd=as.numeric(input$sd))
       }
       else {
 
-        randomVec <- rexp(size,rate = 1/as.numeric(input$lamda))
+        randomVec <- stats::rexp(size,rate = 1/as.numeric(input$lamda))
       }
 
-      hist(randomVec, col = "Pink")
+      graphics::hist(randomVec, col = "Pink")
 
 
     })
