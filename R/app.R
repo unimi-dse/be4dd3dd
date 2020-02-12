@@ -12,14 +12,14 @@ anna_app <- function() {
     # Sidebar panel for inputs ----
     shiny::sidebarPanel(
       shiny::selectInput("Distribution","Please Select Distribution Type",
-                  choices=c("Exponential","Normal")),
+                         choices=c("Exponential","Normal")),
       shiny::sliderInput("sampleSize","Please Select Sample Size:",
-                  min=100, max=5000, value=1000, step=100),
+                         min=100, max=5000, value=1000, step=100),
       shiny::conditionalPanel(condition = "input.Distribution == 'Normal",
-                       shiny::textInput("Mean","Please Select the mean", 10),
-                       shiny::textInput("sd","Please Select Standard Deviation")),
+                              shiny::textInput("Mean","Please Select the mean", 10),
+                              shiny::textInput("sd","Please Select Standard Deviation")),
       shiny::conditionalPanel(condition="input.Distribution == 'Exponential",
-                       shiny::textInput("lamda","Please Select Exponential Lamda:", 1))
+                              shiny::textInput("lamda","Please Select Exponential Lamda:", 1))
     ),
 
     # Main panel for displaying outputs ----
@@ -56,4 +56,5 @@ anna_app <- function() {
 }
 
 if(getRversion() >= "0.1.0")  utils::globalVariables("shiny")
+
 
