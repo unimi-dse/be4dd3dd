@@ -1,4 +1,4 @@
-Package: DistributionCalculator
+Package: DistributionCalculatorAlcons
 Type: Package
 Title: Distribution Calculator by Anna Errichiello
 Version: 0.1.0
@@ -9,5 +9,6 @@ License:GPL-3
 Encoding: UTF-8
 LazyLoading: TRUE
 RoxygenNote: 7.0.2
-Imports:shiny
-Functions: anna_app
+Imports:shiny, ggplot2, devtools, tidyverse
+Functions: anna_app, plotalcons, alcons
+

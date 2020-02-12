@@ -2,10 +2,10 @@
 % Please edit documentation in R/app.R
 \name{anna_app}
 \alias{anna_app}
-\title{Description}
+\title{description}
 \usage{
 anna_app()
 }
 \description{
-Description
+description
 }
