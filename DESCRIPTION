@@ -11,4 +11,4 @@ LazyLoading: TRUE
 RoxygenNote: 7.0.2
 Imports:shiny, ggplot2, devtools, tidyverse
 Functions: anna_app, plotalcons, alcons
-
+Depends: R (>= 3.5.0)
