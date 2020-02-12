@@ -11,16 +11,12 @@
 #'
 #'
 #'
-#'
-#'
-#'
-#'
-#'
+
 
 
 plotalcons <- function () {
   ggplot2::ggplot(data=alcons,
-                  ggplot2::aes(x=alcons$beer_servings, y=alcons$country, col=alcons$total_litres_of_pure_alcohol)) +
+                  ggplot2::aes(x=alcons$beer_servings, y=alcons$country, col=alcons$total_litres_of_pure_alcohol))+
     ggplot2::geom_point()+
     ggplot2::geom_abline()
 
