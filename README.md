@@ -1,9 +1,9 @@
 # DistributionCalculatorAlcons Package
 
-This package provides a shiny app and a dataset with correlated plot.
+This package provides a shiny app and a dataset with correlated diagram.
 The shiny app helps you to easily calculate the distribution of a sample, with a specific size, mean and you can choose between two types of distribution, Exponential and Normal. 
-In the case of Normal disribution, it is important to indicate even the standard deviation, otherwise an error message appears: "invalid number of 'breaks'".
-Tha plot 
+In case of Normal disribution, it is important to indicate even the standard deviation, otherwise an error message appears: "invalid number of 'breaks'".
+The other part shows a graphic using the information taken from the dataset about the alcohol consumption.
 
 ## Installation
 
@@ -14,69 +14,31 @@ devtools::install_github('unimi-dse/be4dd3dd')
 
 ## Dataset
 
-The package provides a dataset containing information of the alcohol 
+The package provides a dataset containing information of the alcohol consumption in differnt countries, divided per "beer servings","wine_servings","spirit servings" considering average alcohol content and average serving size for each beverage and converting those numbers into standard serving sizes. For example french people consume more then wine than people of every other country, i.e. 370 glasses of wine per person per year, compared to just 84 glasses in the U.S. In the last column is indicated the standard amount of litres of pure alcohol consumed by people in each country.
 
 ```R
 # dataset documentation
-?sample::repo
+DistributionCalculatorAlcons::alcons
 ```
 
 ## Usage
 
 ```R
 # load the package
-require(sample)
+require(DistributionCalculatorAlcons)
 ```
 
-### Grade
+### plotalcons
 
-The function `grade()` evaluates the projects of the exam _Coding for Data Science and Data Management_, R module (2019/2020) from https://github.com/unimi-dse. It supports grading multiple (all) projects at once, and storing results into a csv file. Type `?grade` for a complete description of the function and its arguments.
-
-__Note__: running the function several times or grading many projects at once may raise the error "API rate limit exceeded [...]". If so, create a GitHub token to authenticate requests and increase your rate limit, as explained in the error message.
-
-### Fibonacci
-
-The function `fibonacci()` is implemented in C++ and computes the Fibonacci Sequence.
-
-```R
-fibonacci(15)
-```
-
-### Shiny App
-
-The function `sampleGUI()` runs a Graphical User Interface to evaluate the projects from https://github.com/unimi-dse 
-
-```R
-sampleGUI()
-```
-
-# DistributionCalculator Package
-
-This package provides a shiny app that helps you to easily calculate the distribution of a sample, with a specific size, mean and you can choose between two types of distribution, Exponential and Normal. 
-In the case of Normal disribution, it is important to indicate even the standard deviation, otherwise an error message appears: "invalid number of 'breaks'".
-
-## Installation
-
-```R
-# first install the R package "devtools" if not installed
-devtools::install_github('unimi-dse/be4dd3dd')
-```
-
-## Usage
-
-```R
-# load the package
-require(DistributionCalculator)
-```
+The function `plotalcons` shows through a plot the relationship between "beer_servings", "country" and "total_litres_of_pure_alcohol". It takes the information from the dataset "alcons". 
 
 
-### Shiny App
+### anna_app
 
-The function `anna_app()` runs without object.
-The function `anna_app` runs a Graphical User Interface that shows graphically the distribution.
+The function `anna_app` runs a Graphical User Interface to easily calculate the distribution of a sample, with a specific size, mean and you can choose between two types of distribution, Exponential and Normal.
+
+__NOTE__In case of Normal disribution, it is important to indicate even the standard deviation, otherwise an error message appears: "invalid number of 'breaks'".
 
 ```R
 anna_app()
 ```
-
-
