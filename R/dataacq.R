@@ -19,5 +19,8 @@
 
 alcons <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/alcohol-consumption/drinks.csv", sep=",")
 head(alcons)
-save(alcons, file="C:/Users/Anna Errichiello/Documents/GitHub/be4dd3dd/data/alcons.rda")
+dir.create("data")
+save(alcons, file=file.path("data","alcons.rda"))
+
+
 

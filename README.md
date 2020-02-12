@@ -3,17 +3,18 @@
 This package provides a shiny app and a dataset with correlated plot.
 The shiny app helps you to easily calculate the distribution of a sample, with a specific size, mean and you can choose between two types of distribution, Exponential and Normal. 
 In the case of Normal disribution, it is important to indicate even the standard deviation, otherwise an error message appears: "invalid number of 'breaks'".
+Tha plot 
 
 ## Installation
 
 ```R
 # first install the R package "devtools" if not installed
-devtools::install_github('unimi-dse/15f07018')
+devtools::install_github('unimi-dse/be4dd3dd')
 ```
 
 ## Dataset
 
-The package provides a dataset containing the ids for the exam _Coding for Data Science and Data Management_, R module (2019/2020) from https://github.com/unimi-dse
+The package provides a dataset containing information of the alcohol 
 
 ```R
 # dataset documentation
