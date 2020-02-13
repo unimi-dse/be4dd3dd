@@ -2,10 +2,13 @@
 % Please edit documentation in R/app.R
 \name{anna_app}
 \alias{anna_app}
-\title{description}
+\title{anna_app function}
 \usage{
 anna_app()
 }
 \description{
-description
+The function `anna_app` runs a Graphical User Interface to easily calculate the distribution of a sample, with a specific size, mean and you can choose between two types of distribution, Exponential and Normal. __NOTE__In case of Normal disribution, it is important to indicate even the standard deviation, otherwise an error message appears: "invalid number of 'breaks'".
+}
+\author{
+Anna Errichiello <anna.errichiello@studenti.unimi.it>
 }

@@ -11,8 +11,8 @@ alcons
 \description{
 The "alcons" function is an easy way to visualize the dataset
 
-The function needs the argument "alcons".
-The output shows a graph built using the "ggplot2 package"
+The function doesn't need an argument.
+The output shows a graph built using the "ggplot2 package".
 }
 \author{
 Anna Errichiello <anna.errichiello@studenti.unimi.it>

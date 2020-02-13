@@ -1,9 +1,8 @@
 #' @title plotalcons function
 #'
-#' @description The "plotalcons" function is an easy way to visualize the dependence of the tranquilizer frequency on the tranquilizer use.
+#' @description The "plotalcons" function is an easy way to visualize the dependence of "beer servings" on the considered country.
 #'
-#' The function needs the argument "alcons".
-#' The output shows a graph built using the "ggplot2 package"
+#' The output shows a graph built using the "ggplot2 package".
 #'
 #' @author Anna Errichiello <anna.errichiello@studenti.unimi.it>
 #'
